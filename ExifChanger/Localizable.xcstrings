@@ -92,6 +92,50 @@
         }
       }
     },
+    "Add Keywords" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schlüsselwörter hinzufügen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Palavras-chave"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Palavras-chave"
+          }
+        }
+      }
+    },
+    "Add Photos" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotos hinzufügen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Fotos"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Fotos"
+          }
+        }
+      }
+    },
     "Altitude" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -156,6 +200,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aplicar Alterações"
+          }
+        }
+      }
+    },
+    "Apply Location" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort anwenden"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicar Localização"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicar Localização"
           }
         }
       }
@@ -230,6 +296,28 @@
     },
     "Basic Exif data:" : {
 
+    },
+    "Batch Editing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stapelbearbeitung"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edição em Lote"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edição em Lote"
+          }
+        }
+      }
     },
     "Birthday" : {
       "extractionState" : "stale",
@@ -387,6 +475,28 @@
         }
       }
     },
+    "Change Date" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum ändern"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterar Data"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterar Data"
+          }
+        }
+      }
+    },
     "Choose Files..." : {
       "localizations" : {
         "de" : {
@@ -453,6 +563,94 @@
         }
       }
     },
+    "Click 'Apply Changes' to write all pending changes to the files." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicken Sie auf 'Änderungen anwenden', um alle ausstehenden Änderungen in die Dateien zu schreiben."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique em 'Aplicar Alterações' para gravar todas as alterações pendentes nos arquivos."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique em 'Aplicar Alterações' para gravar todas as alterações pendentes nos ficheiros."
+          }
+        }
+      }
+    },
+    "Click on photos to select them. Use Select All to select everything." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicken Sie auf Fotos, um sie auszuwählen. Verwenden Sie Alle auswählen, um alles auszuwählen."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique nas fotos para selecioná-las. Use Selecionar Tudo para selecionar todas."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique nas fotos para as selecionar. Use Selecionar Tudo para selecionar todas."
+          }
+        }
+      }
+    },
+    "Click on predefined keywords or type custom ones. Keywords are stored in IPTC metadata." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicken Sie auf vordefinierte Schlüsselwörter oder geben Sie eigene ein. Schlüsselwörter werden in IPTC-Metadaten gespeichert."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique em palavras-chave predefinidas ou digite suas próprias. As palavras-chave são armazenadas nos metadados IPTC."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique em palavras-chave predefinidas ou escreva as suas próprias. As palavras-chave são armazenadas nos metadados IPTC."
+          }
+        }
+      }
+    },
+    "Click the (i) button on any photo to view all its metadata." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicken Sie auf die (i)-Schaltfläche eines Fotos, um alle Metadaten anzuzeigen."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique no botão (i) em qualquer foto para ver todos os seus metadados."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique no botão (i) em qualquer foto para ver todos os seus metadados."
+          }
+        }
+      }
+    },
     "Close" : {
       "localizations" : {
         "de" : {
@@ -471,6 +669,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fechar"
+          }
+        }
+      }
+    },
+    "Compatibility" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kompatibilität"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatibilidade"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatibilidade"
           }
         }
       }
@@ -724,6 +944,50 @@
         }
       }
     },
+    "Discard pending changes and revert to the original metadata." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausstehende Änderungen verwerfen und zu den ursprünglichen Metadaten zurückkehren."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descartar alterações pendentes e reverter para os metadados originais."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descartar alterações pendentes e reverter para os metadados originais."
+          }
+        }
+      }
+    },
+    "Drag and drop photos into the app, or use File → Open Photos (⌘O)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehen Sie Fotos in die App oder verwenden Sie Ablage → Fotos öffnen (⌘O)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arraste fotos para o app ou use Arquivo → Abrir Fotos (⌘O)"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arraste fotos para a app ou use Ficheiro → Abrir Fotos (⌘O)"
+          }
+        }
+      }
+    },
     "Drop photos here" : {
       "localizations" : {
         "de" : {
@@ -790,6 +1054,34 @@
           }
         }
       }
+    },
+    "ExifChanger" : {
+
+    },
+    "ExifChanger Help" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ExifChanger Hilfe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda do ExifChanger"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda do ExifChanger"
+          }
+        }
+      }
+    },
+    "ExifChanger v1.0" : {
+
     },
     "Exposure" : {
       "extractionState" : "stale",
@@ -882,6 +1174,28 @@
         }
       }
     },
+    "File Permissions" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dateiberechtigungen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permissões de Arquivo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permissões de Ficheiro"
+          }
+        }
+      }
+    },
     "Flash" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -951,6 +1265,28 @@
         }
       }
     },
+    "Getting Started" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erste Schritte"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primeiros Passos"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primeiros Passos"
+          }
+        }
+      }
+    },
     "GPS data:" : {
 
     },
@@ -999,6 +1335,31 @@
         }
       }
     },
+    "Help" : {
+
+    },
+    "If you get permission errors, use File → Open Photos instead of drag and drop." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn Sie Berechtigungsfehler erhalten, verwenden Sie Ablage → Fotos öffnen anstelle von Drag and Drop."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você receber erros de permissão, use Arquivo → Abrir Fotos em vez de arrastar e soltar."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se receber erros de permissão, use Ficheiro → Abrir Fotos em vez de arrastar e largar."
+          }
+        }
+      }
+    },
     "Image" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1040,6 +1401,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Formato de imagem não suportado"
+          }
+        }
+      }
+    },
+    "Image, EXIF, TIFF, GPS, IPTC tabs show different metadata categories. Map tab shows the photo location." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Tabs Image, EXIF, TIFF, GPS, IPTC zeigen verschiedene Metadaten-Kategorien. Der Karten-Tab zeigt den Fotostandort."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As abas Image, EXIF, TIFF, GPS, IPTC mostram diferentes categorias de metadados. A aba Mapa mostra a localização da foto."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os separadores Image, EXIF, TIFF, GPS, IPTC mostram diferentes categorias de metadados. O separador Mapa mostra a localização da foto."
           }
         }
       }
@@ -1092,6 +1475,28 @@
         }
       }
     },
+    "JPEG, HEIC, PNG, and TIFF files are supported." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JPEG, HEIC, PNG und TIFF Dateien werden unterstützt."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arquivos JPEG, HEIC, PNG e TIFF são suportados."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ficheiros JPEG, HEIC, PNG e TIFF são suportados."
+          }
+        }
+      }
+    },
     "JPEG, HEIC, PNG, TIFF" : {
 
     },
@@ -1113,6 +1518,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palavras-chave"
+          }
+        }
+      }
+    },
+    "Keywords work with Lightroom, Capture One, and other professional photo software." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schlüsselwörter funktionieren mit Lightroom, Capture One und anderer professioneller Fotosoftware."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As palavras-chave funcionam com Lightroom, Capture One e outros softwares profissionais de fotografia."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As palavras-chave funcionam com Lightroom, Capture One e outros softwares profissionais de fotografia."
           }
         }
       }
@@ -1208,6 +1635,28 @@
         }
       }
     },
+    "Loads the original date from the first selected photo." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lädt das Originaldatum vom ersten ausgewählten Foto."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carrega a data original da primeira foto selecionada."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carrega a data original da primeira foto selecionada."
+          }
+        }
+      }
+    },
     "Location" : {
       "localizations" : {
         "de" : {
@@ -1272,6 +1721,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fabricante"
+          }
+        }
+      }
+    },
+    "Metadata Inspector" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metadaten-Inspektor"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspetor de Metadados"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspetor de Metadados"
           }
         }
       }
@@ -1476,6 +1947,28 @@
         }
       }
     },
+    "Open Inspector" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspektor öffnen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Inspetor"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Inspetor"
+          }
+        }
+      }
+    },
     "Open Photos..." : {
       "localizations" : {
         "de" : {
@@ -1516,6 +2009,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ou"
+          }
+        }
+      }
+    },
+    "Orange dots on thumbnails indicate unsaved changes." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange Punkte auf Miniaturansichten zeigen nicht gespeicherte Änderungen an."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pontos laranja nas miniaturas indicam alterações não salvas."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pontos laranja nas miniaturas indicam alterações não guardadas."
           }
         }
       }
@@ -1561,6 +2076,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Original:"
+          }
+        }
+      }
+    },
+    "Pending Changes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausstehende Änderungen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterações Pendentes"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterações Pendentes"
           }
         }
       }
@@ -1704,6 +2241,28 @@
         }
       }
     },
+    "Saving Changes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Änderungen speichern"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvando Alterações"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar Alterações"
+          }
+        }
+      }
+    },
     "Saving changes..." : {
       "localizations" : {
         "de" : {
@@ -1792,6 +2351,50 @@
         }
       }
     },
+    "Select multiple photos to apply the same date, location, or keywords to all of them at once." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie mehrere Fotos aus, um dasselbe Datum, denselben Standort oder dieselben Schlüsselwörter auf alle gleichzeitig anzuwenden."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione várias fotos para aplicar a mesma data, localização ou palavras-chave a todas de uma vez."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione várias fotos para aplicar a mesma data, localização ou palavras-chave a todas de uma vez."
+          }
+        }
+      }
+    },
+    "Select Photos" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotos auswählen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionar Fotos"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionar Fotos"
+          }
+        }
+      }
+    },
     "Select photos to edit" : {
       "localizations" : {
         "de" : {
@@ -1810,6 +2413,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selecione fotos para editar"
+          }
+        }
+      }
+    },
+    "Select photos to see their GPS locations on the map (blue markers)." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie Fotos aus, um ihre GPS-Standorte auf der Karte zu sehen (blaue Markierungen)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione fotos para ver suas localizações GPS no mapa (marcadores azuis)."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione fotos para ver as suas localizações GPS no mapa (marcadores azuis)."
+          }
+        }
+      }
+    },
+    "Select photos, pick a new date/time, then click 'Apply to Selected'." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie Fotos aus, wählen Sie ein neues Datum/Uhrzeit und klicken Sie auf 'Auf Ausgewählte anwenden'."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione fotos, escolha uma nova data/hora e clique em 'Aplicar aos Selecionados'."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecione fotos, escolha uma nova data/hora e clique em 'Aplicar aos Selecionados'."
           }
         }
       }
@@ -1881,6 +2528,28 @@
         }
       }
     },
+    "Set Location" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standort festlegen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir Localização"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir Localização"
+          }
+        }
+      }
+    },
     "Shutter Speed" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1927,6 +2596,50 @@
         }
       }
     },
+    "Supported Formats" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstützte Formate"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formatos Suportados"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formatos Suportados"
+          }
+        }
+      }
+    },
+    "Sync File Dates" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dateidaten synchronisieren"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizar Datas do Arquivo"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizar Datas do Ficheiro"
+          }
+        }
+      }
+    },
     "Sync file dates with EXIF" : {
       "localizations" : {
         "de" : {
@@ -1949,8 +2662,96 @@
         }
       }
     },
+    "Tabs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tabs"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abas"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Separadores"
+          }
+        }
+      }
+    },
+    "Tap on the map, search for a place, or use 'My Location' to set GPS coordinates." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen Sie auf die Karte, suchen Sie einen Ort oder verwenden Sie 'Mein Standort', um GPS-Koordinaten festzulegen."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque no mapa, pesquise um local ou use 'Minha Localização' para definir coordenadas GPS."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque no mapa, pesquise um local ou use 'A Minha Localização' para definir coordenadas GPS."
+          }
+        }
+      }
+    },
+    "The red marker shows the new location. Click 'Apply to Selected' to save it." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die rote Markierung zeigt den neuen Standort. Klicken Sie auf 'Auf Ausgewählte anwenden', um ihn zu speichern."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O marcador vermelho mostra a nova localização. Clique em 'Aplicar aos Selecionados' para salvá-la."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O marcador vermelho mostra a nova localização. Clique em 'Aplicar aos Selecionados' para guardá-la."
+          }
+        }
+      }
+    },
     "TIFF metadata:" : {
 
+    },
+    "Tips" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dicas"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dicas"
+          }
+        }
+      }
     },
     "Use my location" : {
       "localizations" : {
@@ -1996,6 +2797,28 @@
         }
       }
     },
+    "View Locations" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standorte anzeigen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver Localizações"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver Localizações"
+          }
+        }
+      }
+    },
     "Wedding" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2015,271 +2838,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Casamento"
-          }
-        }
-      }
-    },
-    "Yes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ja"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sim"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sim"
-          }
-        }
-      }
-    },
-    "Getting Started" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erste Schritte"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Primeiros Passos"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Primeiros Passos"
-          }
-        }
-      }
-    },
-    "Add Photos" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fotos hinzufügen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adicionar Fotos"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adicionar Fotos"
-          }
-        }
-      }
-    },
-    "Drag and drop photos into the app, or use File → Open Photos (⌘O)" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ziehen Sie Fotos in die App oder verwenden Sie Ablage → Fotos öffnen (⌘O)"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arraste fotos para o app ou use Arquivo → Abrir Fotos (⌘O)"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arraste fotos para a app ou use Ficheiro → Abrir Fotos (⌘O)"
-          }
-        }
-      }
-    },
-    "Select Photos" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fotos auswählen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecionar Fotos"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecionar Fotos"
-          }
-        }
-      }
-    },
-    "Click on photos to select them. Use Select All to select everything." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klicken Sie auf Fotos, um sie auszuwählen. Verwenden Sie Alle auswählen, um alles auszuwählen."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique nas fotos para selecioná-las. Use Selecionar Tudo para selecionar todas."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique nas fotos para as selecionar. Use Selecionar Tudo para selecionar todas."
-          }
-        }
-      }
-    },
-    "Supported Formats" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterstützte Formate"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formatos Suportados"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Formatos Suportados"
-          }
-        }
-      }
-    },
-    "JPEG, HEIC, PNG, and TIFF files are supported." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "JPEG, HEIC, PNG und TIFF Dateien werden unterstützt."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arquivos JPEG, HEIC, PNG e TIFF são suportados."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ficheiros JPEG, HEIC, PNG e TIFF são suportados."
-          }
-        }
-      }
-    },
-    "Change Date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datum ändern"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alterar Data"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alterar Data"
-          }
-        }
-      }
-    },
-    "Select photos, pick a new date/time, then click 'Apply to Selected'." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählen Sie Fotos aus, wählen Sie ein neues Datum/Uhrzeit und klicken Sie auf 'Auf Ausgewählte anwenden'."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione fotos, escolha uma nova data/hora e clique em 'Aplicar aos Selecionados'."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione fotos, escolha uma nova data/hora e clique em 'Aplicar aos Selecionados'."
-          }
-        }
-      }
-    },
-    "Loads the original date from the first selected photo." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lädt das Originaldatum vom ersten ausgewählten Foto."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carrega a data original da primeira foto selecionada."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carrega a data original da primeira foto selecionada."
-          }
-        }
-      }
-    },
-    "Sync File Dates" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dateidaten synchronisieren"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sincronizar Datas do Arquivo"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sincronizar Datas do Ficheiro"
           }
         }
       }
@@ -2306,574 +2864,25 @@
         }
       }
     },
-    "Add Keywords" : {
+    "Yes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Schlüsselwörter hinzufügen"
+            "value" : "Ja"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adicionar Palavras-chave"
+            "value" : "Sim"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adicionar Palavras-chave"
-          }
-        }
-      }
-    },
-    "Click on predefined keywords or type custom ones. Keywords are stored in IPTC metadata." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klicken Sie auf vordefinierte Schlüsselwörter oder geben Sie eigene ein. Schlüsselwörter werden in IPTC-Metadaten gespeichert."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique em palavras-chave predefinidas ou digite suas próprias. As palavras-chave são armazenadas nos metadados IPTC."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique em palavras-chave predefinidas ou escreva as suas próprias. As palavras-chave são armazenadas nos metadados IPTC."
-          }
-        }
-      }
-    },
-    "Compatibility" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kompatibilität"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compatibilidade"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compatibilidade"
-          }
-        }
-      }
-    },
-    "Keywords work with Lightroom, Capture One, and other professional photo software." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schlüsselwörter funktionieren mit Lightroom, Capture One und anderer professioneller Fotosoftware."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As palavras-chave funcionam com Lightroom, Capture One e outros softwares profissionais de fotografia."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As palavras-chave funcionam com Lightroom, Capture One e outros softwares profissionais de fotografia."
-          }
-        }
-      }
-    },
-    "View Locations" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standorte anzeigen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ver Localizações"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ver Localizações"
-          }
-        }
-      }
-    },
-    "Select photos to see their GPS locations on the map (blue markers)." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählen Sie Fotos aus, um ihre GPS-Standorte auf der Karte zu sehen (blaue Markierungen)."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione fotos para ver suas localizações GPS no mapa (marcadores azuis)."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione fotos para ver as suas localizações GPS no mapa (marcadores azuis)."
-          }
-        }
-      }
-    },
-    "Set Location" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standort festlegen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Definir Localização"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Definir Localização"
-          }
-        }
-      }
-    },
-    "Tap on the map, search for a place, or use 'My Location' to set GPS coordinates." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tippen Sie auf die Karte, suchen Sie einen Ort oder verwenden Sie 'Mein Standort', um GPS-Koordinaten festzulegen."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque no mapa, pesquise um local ou use 'Minha Localização' para definir coordenadas GPS."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque no mapa, pesquise um local ou use 'A Minha Localização' para definir coordenadas GPS."
-          }
-        }
-      }
-    },
-    "Apply Location" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standort anwenden"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aplicar Localização"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aplicar Localização"
-          }
-        }
-      }
-    },
-    "The red marker shows the new location. Click 'Apply to Selected' to save it." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die rote Markierung zeigt den neuen Standort. Klicken Sie auf 'Auf Ausgewählte anwenden', um ihn zu speichern."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O marcador vermelho mostra a nova localização. Clique em 'Aplicar aos Selecionados' para salvá-la."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O marcador vermelho mostra a nova localização. Clique em 'Aplicar aos Selecionados' para guardá-la."
-          }
-        }
-      }
-    },
-    "Metadata Inspector" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Metadaten-Inspektor"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inspetor de Metadados"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inspetor de Metadados"
-          }
-        }
-      }
-    },
-    "Open Inspector" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inspektor öffnen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abrir Inspetor"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abrir Inspetor"
-          }
-        }
-      }
-    },
-    "Click the (i) button on any photo to view all its metadata." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klicken Sie auf die (i)-Schaltfläche eines Fotos, um alle Metadaten anzuzeigen."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique no botão (i) em qualquer foto para ver todos os seus metadados."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique no botão (i) em qualquer foto para ver todos os seus metadados."
-          }
-        }
-      }
-    },
-    "Tabs" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tabs"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abas"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Separadores"
-          }
-        }
-      }
-    },
-    "Image, EXIF, TIFF, GPS, IPTC tabs show different metadata categories. Map tab shows the photo location." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Tabs Image, EXIF, TIFF, GPS, IPTC zeigen verschiedene Metadaten-Kategorien. Der Karten-Tab zeigt den Fotostandort."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As abas Image, EXIF, TIFF, GPS, IPTC mostram diferentes categorias de metadados. A aba Mapa mostra a localização da foto."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Os separadores Image, EXIF, TIFF, GPS, IPTC mostram diferentes categorias de metadados. O separador Mapa mostra a localização da foto."
-          }
-        }
-      }
-    },
-    "Saving Changes" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Änderungen speichern"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salvando Alterações"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Guardar Alterações"
-          }
-        }
-      }
-    },
-    "Pending Changes" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ausstehende Änderungen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alterações Pendentes"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alterações Pendentes"
-          }
-        }
-      }
-    },
-    "Orange dots on thumbnails indicate unsaved changes." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Orange Punkte auf Miniaturansichten zeigen nicht gespeicherte Änderungen an."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pontos laranja nas miniaturas indicam alterações não salvas."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pontos laranja nas miniaturas indicam alterações não guardadas."
-          }
-        }
-      }
-    },
-    "Click 'Apply Changes' to write all pending changes to the files." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klicken Sie auf 'Änderungen anwenden', um alle ausstehenden Änderungen in die Dateien zu schreiben."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique em 'Aplicar Alterações' para gravar todas as alterações pendentes nos arquivos."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clique em 'Aplicar Alterações' para gravar todas as alterações pendentes nos ficheiros."
-          }
-        }
-      }
-    },
-    "Discard pending changes and revert to the original metadata." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ausstehende Änderungen verwerfen und zu den ursprünglichen Metadaten zurückkehren."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descartar alterações pendentes e reverter para os metadados originais."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descartar alterações pendentes e reverter para os metadados originais."
-          }
-        }
-      }
-    },
-    "Tips" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tipps"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dicas"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dicas"
-          }
-        }
-      }
-    },
-    "Batch Editing" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stapelbearbeitung"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edição em Lote"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edição em Lote"
-          }
-        }
-      }
-    },
-    "Select multiple photos to apply the same date, location, or keywords to all of them at once." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählen Sie mehrere Fotos aus, um dasselbe Datum, denselben Standort oder dieselben Schlüsselwörter auf alle gleichzeitig anzuwenden."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione várias fotos para aplicar a mesma data, localização ou palavras-chave a todas de uma vez."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selecione várias fotos para aplicar a mesma data, localização ou palavras-chave a todas de uma vez."
-          }
-        }
-      }
-    },
-    "File Permissions" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dateiberechtigungen"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Permissões de Arquivo"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Permissões de Ficheiro"
-          }
-        }
-      }
-    },
-    "If you get permission errors, use File → Open Photos instead of drag and drop." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wenn Sie Berechtigungsfehler erhalten, verwenden Sie Ablage → Fotos öffnen anstelle von Drag and Drop."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se você receber erros de permissão, use Arquivo → Abrir Fotos em vez de arrastar e soltar."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se receber erros de permissão, use Ficheiro → Abrir Fotos em vez de arrastar e largar."
-          }
-        }
-      }
-    },
-    "ExifChanger Help" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ExifChanger Hilfe"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuda do ExifChanger"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajuda do ExifChanger"
+            "value" : "Sim"
           }
         }
       }
