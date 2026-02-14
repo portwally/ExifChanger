@@ -66,11 +66,18 @@ struct DateTimeEditorView: View {
         .background(Color(.controlBackgroundColor).opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .onAppear {
-            // Initialize with first selected photo's date
-            if let firstPhoto = viewModel.selectedPhotos.first,
-               let originalDate = firstPhoto.originalMetadata?.dateTimeOriginal {
-                viewModel.editingDate = originalDate
-            }
+            loadOriginalDate()
+        }
+        .onChange(of: viewModel.selectedPhotoIDs) {
+            loadOriginalDate()
+        }
+    }
+
+    private func loadOriginalDate() {
+        // Initialize with first selected photo's date
+        if let firstPhoto = viewModel.selectedPhotos.first,
+           let originalDate = firstPhoto.originalMetadata?.dateTimeOriginal {
+            viewModel.editingDate = originalDate
         }
     }
 }

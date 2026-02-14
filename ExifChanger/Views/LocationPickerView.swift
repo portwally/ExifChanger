@@ -99,17 +99,12 @@ struct LocationPickerView: View {
                         }
                     }
                     .mapStyle(.standard)
-                    .overlay {
-                        // Invisible overlay to capture taps without interfering with pan/zoom
-                        Color.clear
-                            .contentShape(Rectangle())
-                            .onTapGesture { location in
-                                if let coordinate = proxy.convert(location, from: .local) {
-                                    viewModel.editingCoordinate = coordinate
-                                    searchText = ""
-                                    searchResults = []
-                                }
-                            }
+                    .onTapGesture { location in
+                        if let coordinate = proxy.convert(location, from: .local) {
+                            viewModel.editingCoordinate = coordinate
+                            searchText = ""
+                            searchResults = []
+                        }
                     }
                 }
                 .frame(height: 180)
