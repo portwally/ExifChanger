@@ -241,33 +241,45 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
+    private var isAuthorized: Bool {
+        let status = manager.authorizationStatus
+        // macOS uses .authorized and .authorizedAlways (no .authorizedWhenInUse)
+        return status == .authorizedAlways || status == .authorized
+    }
+
     func requestLocation() {
         let status = manager.authorizationStatus
         if status == .notDetermined {
-            manager.requestAlwaysAuthorization()
-        } else if status == .authorizedAlways || status == .authorized {
             isRequestingLocation = true
-            manager.startUpdatingLocation()
+            manager.requestWhenInUseAuthorization()
+        } else if isAuthorized {
+            isRequestingLocation = true
+            manager.requestLocation()
+        } else {
+            print("Location access denied. Status: \(status.rawValue)")
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if isRequestingLocation {
-            currentLocation = locations.last
-            manager.stopUpdatingLocation()
-            isRequestingLocation = false
-        }
+        guard let location = locations.last else { return }
+        currentLocation = location
+        isRequestingLocation = false
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Location error: \(error.localizedDescription)")
+        // Error 0 = kCLErrorLocationUnknown, can retry
+        if let clError = error as? CLError, clError.code == .locationUnknown {
+            // Location temporarily unavailable, will retry automatically
+            return
+        }
         isRequestingLocation = false
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         authorizationStatus = manager.authorizationStatus
-        if isRequestingLocation && (authorizationStatus == .authorizedAlways || authorizationStatus == .authorized) {
-            manager.startUpdatingLocation()
+        if isRequestingLocation && isAuthorized {
+            manager.requestLocation()
         }
     }
 }
