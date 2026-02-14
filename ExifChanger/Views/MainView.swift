@@ -5,6 +5,7 @@ struct MainView: View {
     @State private var viewModel = PhotoLibraryViewModel()
     @State private var showInspector = false
     @State private var inspectedPhoto: PhotoItem?
+    @Environment(\.openWindow) private var openWindow
 
     var body: some View {
         VStack(spacing: 0) {
@@ -49,6 +50,9 @@ struct MainView: View {
                 let urls = await viewModel.showOpenPanel()
                 viewModel.addPhotos(from: urls)
             }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .showHelp)) { _ in
+            openWindow(id: "help")
         }
     }
 

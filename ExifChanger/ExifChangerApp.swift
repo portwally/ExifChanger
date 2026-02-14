@@ -23,10 +23,24 @@ struct ExifChangerApp: App {
                 }
                 .keyboardShortcut("o", modifiers: .command)
             }
+
+            CommandGroup(replacing: .help) {
+                Button(String(localized: "ExifChanger Help")) {
+                    NotificationCenter.default.post(name: .showHelp, object: nil)
+                }
+                .keyboardShortcut("?", modifiers: .command)
+            }
         }
+
+        // Help Window
+        Window(String(localized: "Help"), id: "help") {
+            HelpView()
+        }
+        .windowResizability(.contentSize)
     }
 }
 
 extension Notification.Name {
     static let openPhotos = Notification.Name("openPhotos")
+    static let showHelp = Notification.Name("showHelp")
 }
