@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9500"/>
+      <stop offset="100%" style="stop-color:#FF6B00"/>
+    </linearGradient>
+    <linearGradient id="cameraGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="100%" style="stop-color:#E8E8E8"/>
+    </linearGradient>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90D9"/>
+      <stop offset="50%" style="stop-color:#2E5C8A"/>
+      <stop offset="100%" style="stop-color:#1A3A5C"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect x="40" y="40" width="944" height="944" rx="200" ry="200" fill="url(#bgGrad)"/>
+
+  <!-- Camera body -->
+  <g filter="url(#shadow)">
+    <!-- Main camera body -->
+    <rect x="180" y="320" width="500" height="380" rx="40" ry="40" fill="url(#cameraGrad)"/>
+
+    <!-- Camera top bump (viewfinder area) -->
+    <rect x="280" y="260" width="200" height="80" rx="20" ry="20" fill="url(#cameraGrad)"/>
+
+    <!-- Lens outer ring -->
+    <circle cx="430" cy="510" r="140" fill="#333" stroke="#555" stroke-width="8"/>
+
+    <!-- Lens inner gradient -->
+    <circle cx="430" cy="510" r="110" fill="url(#lensGrad)"/>
+
+    <!-- Lens reflection -->
+    <ellipse cx="400" cy="470" rx="40" ry="25" fill="rgba(255,255,255,0.3)"/>
+
+    <!-- Lens center -->
+    <circle cx="430" cy="510" r="35" fill="#0A1628"/>
+
+    <!-- Flash -->
+    <rect x="540" y="340" width="60" height="40" rx="8" ry="8" fill="#FFD700"/>
+  </g>
+
+  <!-- Info badge (bottom right) -->
+  <g filter="url(#shadow)">
+    <circle cx="750" cy="720" r="140" fill="#007AFF"/>
+    <circle cx="750" cy="720" r="125" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="4"/>
+
+    <!-- Info "i" symbol -->
+    <circle cx="750" cy="630" r="22" fill="white"/>
+    <rect x="728" y="680" width="44" height="120" rx="22" ry="22" fill="white"/>
+  </g>
+</svg>
