@@ -41,7 +41,9 @@
 
 - **Localization**
   - English (en) - default
-  - Portuguese (pt-PT) - full translation
+  - German (de) - full translation
+  - Portuguese Brazil (pt-BR) - full translation
+  - Portuguese Portugal (pt-PT) - full translation
 
 - **macOS Integration**
   - Native SwiftUI interface
