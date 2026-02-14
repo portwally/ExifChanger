@@ -15,11 +15,9 @@ struct PhotoGridView: View {
                     PhotoThumbnailView(
                         photo: photo,
                         isSelected: viewModel.selectedPhotoIDs.contains(photo.id),
+                        onSelect: { viewModel.toggleSelection(for: photo) },
                         onInspect: { onInspect(photo) }
                     )
-                    .onTapGesture {
-                        viewModel.toggleSelection(for: photo)
-                    }
                     .contextMenu {
                         Button(String(localized: "Inspect Metadata")) {
                             onInspect(photo)
@@ -53,25 +51,33 @@ struct PhotoGridView: View {
 struct PhotoThumbnailView: View {
     @ObservedObject var photo: PhotoItem
     let isSelected: Bool
+    let onSelect: () -> Void
     let onInspect: () -> Void
 
     var body: some View {
         VStack(spacing: 4) {
             ZStack {
-                if let thumbnail = photo.thumbnail {
-                    Image(nsImage: thumbnail)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 120, height: 100)
-                        .clipped()
-                } else if photo.isLoading {
-                    ProgressView()
-                        .frame(width: 120, height: 100)
-                } else {
-                    Image(systemName: "photo")
-                        .font(.largeTitle)
-                        .foregroundStyle(.secondary)
-                        .frame(width: 120, height: 100)
+                // Main content - tappable for selection
+                Group {
+                    if let thumbnail = photo.thumbnail {
+                        Image(nsImage: thumbnail)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 120, height: 100)
+                            .clipped()
+                    } else if photo.isLoading {
+                        ProgressView()
+                            .frame(width: 120, height: 100)
+                    } else {
+                        Image(systemName: "photo")
+                            .font(.largeTitle)
+                            .foregroundStyle(.secondary)
+                            .frame(width: 120, height: 100)
+                    }
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    onSelect()
                 }
 
                 // Top-right indicators
@@ -93,10 +99,10 @@ struct PhotoThumbnailView: View {
                             Image(systemName: "info.circle.fill")
                                 .font(.system(size: 16))
                                 .foregroundStyle(.white, .black.opacity(0.5))
+                                .padding(4)
                         }
                         .buttonStyle(.plain)
                     }
-                    .padding(4)
                     Spacer()
                 }
 
@@ -104,6 +110,7 @@ struct PhotoThumbnailView: View {
                 if isSelected {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.accentColor, lineWidth: 3)
+                        .allowsHitTesting(false)
 
                     VStack {
                         HStack {
@@ -114,6 +121,7 @@ struct PhotoThumbnailView: View {
                         }
                         Spacer()
                     }
+                    .allowsHitTesting(false)
                 }
             }
             .frame(width: 120, height: 100)
@@ -138,6 +146,6 @@ struct PhotoThumbnailView: View {
 
 #Preview("Thumbnail") {
     let photo = PhotoItem(url: URL(fileURLWithPath: "/test.jpg"))
-    return PhotoThumbnailView(photo: photo, isSelected: true, onInspect: {})
+    return PhotoThumbnailView(photo: photo, isSelected: true, onSelect: {}, onInspect: {})
         .padding()
 }
