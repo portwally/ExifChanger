@@ -118,11 +118,15 @@ enum ImageFormat: String, CaseIterable, Sendable {
 
     static func from(extension ext: String) -> ImageFormat? {
         let lower = ext.lowercased()
+        // Handle common aliases
+        if lower == "jpg" { return .jpeg }
         return ImageFormat.allCases.first { $0.rawValue == lower }
     }
 
     static var supportedExtensions: [String] {
-        allCases.map { $0.rawValue }
+        var extensions = allCases.map { $0.rawValue }
+        extensions.append("jpg") // Common alias for jpeg
+        return extensions
     }
 
     static var supportedUTTypes: [UTType] {
