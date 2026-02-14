@@ -14,7 +14,8 @@ struct PhotoGridView: View {
                 ForEach(viewModel.photos) { photo in
                     PhotoThumbnailView(
                         photo: photo,
-                        isSelected: viewModel.selectedPhotoIDs.contains(photo.id)
+                        isSelected: viewModel.selectedPhotoIDs.contains(photo.id),
+                        onInspect: { onInspect(photo) }
                     )
                     .onTapGesture {
                         viewModel.toggleSelection(for: photo)
@@ -52,6 +53,7 @@ struct PhotoGridView: View {
 struct PhotoThumbnailView: View {
     @ObservedObject var photo: PhotoItem
     let isSelected: Bool
+    let onInspect: () -> Void
 
     var body: some View {
         VStack(spacing: 4) {
@@ -72,18 +74,30 @@ struct PhotoThumbnailView: View {
                         .frame(width: 120, height: 100)
                 }
 
-                // Change indicator
-                if photo.hasChanges {
-                    VStack {
-                        HStack {
-                            Spacer()
+                // Top-right indicators
+                VStack {
+                    HStack {
+                        Spacer()
+
+                        // Change indicator
+                        if photo.hasChanges {
                             Circle()
                                 .fill(.orange)
                                 .frame(width: 10, height: 10)
-                                .padding(6)
                         }
-                        Spacer()
+
+                        // Info button
+                        Button {
+                            onInspect()
+                        } label: {
+                            Image(systemName: "info.circle.fill")
+                                .font(.system(size: 16))
+                                .foregroundStyle(.white, .black.opacity(0.5))
+                        }
+                        .buttonStyle(.plain)
                     }
+                    .padding(4)
+                    Spacer()
                 }
 
                 // Selection indicator
@@ -116,8 +130,14 @@ struct PhotoThumbnailView: View {
     }
 }
 
-#Preview {
+#Preview("Grid") {
     let vm = PhotoLibraryViewModel()
     return PhotoGridView(viewModel: vm) { _ in }
         .frame(width: 400, height: 300)
+}
+
+#Preview("Thumbnail") {
+    let photo = PhotoItem(url: URL(fileURLWithPath: "/test.jpg"))
+    return PhotoThumbnailView(photo: photo, isSelected: true, onInspect: {})
+        .padding()
 }
