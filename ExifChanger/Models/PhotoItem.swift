@@ -46,10 +46,17 @@ class PhotoItem: Identifiable, ObservableObject, Hashable {
     var fileExtension: String { url.pathExtension.lowercased() }
 
     private func updateHasChanges() {
-        guard let pending = _pendingMetadata, let original = _originalMetadata else {
+        // If no pending metadata, no changes
+        guard let pending = _pendingMetadata else {
             hasChanges = false
             return
         }
+        // If no original metadata but we have pending, that's a change
+        guard let original = _originalMetadata else {
+            hasChanges = true
+            return
+        }
+        // Compare pending vs original
         hasChanges = pending != original
     }
 
