@@ -7,15 +7,23 @@ struct MainView: View {
     @State private var inspectedPhoto: PhotoItem?
 
     var body: some View {
-        HSplitView {
-            // Left side: Photos
-            photoPanel
-                .frame(minWidth: 300)
+        VStack(spacing: 0) {
+            HSplitView {
+                // Left side: Photos
+                photoContent
+                    .frame(minWidth: 300)
 
-            // Right side: Editors
+                // Right side: Editors
+                if viewModel.hasPhotos {
+                    editorContent
+                        .frame(minWidth: 320, idealWidth: 380)
+                }
+            }
+
+            // Full-width bottom bar
             if viewModel.hasPhotos {
-                editorPanel
-                    .frame(minWidth: 320, idealWidth: 380)
+                Divider()
+                bottomBar
             }
         }
         .frame(minWidth: 700, minHeight: 500)
@@ -50,10 +58,10 @@ struct MainView: View {
         }
     }
 
-    // MARK: - Photo Panel
+    // MARK: - Photo Content
 
-    private var photoPanel: some View {
-        VStack(spacing: 0) {
+    private var photoContent: some View {
+        Group {
             if viewModel.hasPhotos {
                 PhotoGridView(viewModel: viewModel) { photo in
                     inspectedPhoto = photo
@@ -68,11 +76,6 @@ struct MainView: View {
                     }
                 }
             }
-
-            // Bottom toolbar
-            if viewModel.hasPhotos {
-                photoToolbar
-            }
         }
         .onDrop(of: [.fileURL], isTargeted: nil) { providers in
             handleDrop(providers: providers)
@@ -80,44 +83,9 @@ struct MainView: View {
         }
     }
 
-    private var photoToolbar: some View {
-        HStack {
-            Button(String(localized: "Select All")) {
-                viewModel.selectAll()
-            }
-            .disabled(viewModel.photos.isEmpty)
+    // MARK: - Editor Content
 
-            Button(String(localized: "Deselect")) {
-                viewModel.deselectAll()
-            }
-            .disabled(!viewModel.hasSelection)
-
-            Spacer()
-
-            Text("\(viewModel.selectedPhotoIDs.count) / \(viewModel.photos.count)")
-                .foregroundStyle(.secondary)
-                .font(.caption)
-
-            Spacer()
-
-            Button(String(localized: "Remove")) {
-                viewModel.removeSelectedPhotos()
-            }
-            .disabled(!viewModel.hasSelection)
-
-            Button(String(localized: "Clear All")) {
-                viewModel.clearAllPhotos()
-            }
-            .disabled(viewModel.photos.isEmpty)
-        }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-        .background(.bar)
-    }
-
-    // MARK: - Editor Panel
-
-    private var editorPanel: some View {
+    private var editorContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 // Selection info
@@ -136,11 +104,6 @@ struct MainView: View {
 
                     // Location Editor
                     LocationPickerView(viewModel: viewModel)
-
-                    Divider()
-
-                    // Actions
-                    actionButtons
                 } else {
                     Text("Select photos to edit")
                         .foregroundStyle(.secondary)
@@ -153,6 +116,71 @@ struct MainView: View {
             .padding()
         }
         .background(Color(.windowBackgroundColor))
+    }
+
+    // MARK: - Bottom Bar
+
+    private var bottomBar: some View {
+        HStack(spacing: 0) {
+            // Left side: photo selection controls
+            HStack {
+                Button(String(localized: "Select All")) {
+                    viewModel.selectAll()
+                }
+                .disabled(viewModel.photos.isEmpty)
+
+                Button(String(localized: "Deselect")) {
+                    viewModel.deselectAll()
+                }
+                .disabled(!viewModel.hasSelection)
+
+                Spacer()
+
+                Text("\(viewModel.selectedPhotoIDs.count) / \(viewModel.photos.count)")
+                    .foregroundStyle(.secondary)
+                    .font(.caption)
+
+                Spacer()
+
+                Button(String(localized: "Remove")) {
+                    viewModel.removeSelectedPhotos()
+                }
+                .disabled(!viewModel.hasSelection)
+
+                Button(String(localized: "Clear All")) {
+                    viewModel.clearAllPhotos()
+                }
+                .disabled(viewModel.photos.isEmpty)
+            }
+            .padding(.horizontal)
+            .frame(minWidth: 300)
+
+            Divider()
+
+            // Right side: action controls
+            HStack {
+                Toggle(String(localized: "Sync file dates with EXIF"), isOn: $viewModel.syncFileDates)
+
+                Spacer()
+
+                Button(String(localized: "Reset Changes")) {
+                    viewModel.resetSelectedChanges()
+                }
+                .disabled(!viewModel.hasChanges)
+
+                Button(String(localized: "Apply Changes")) {
+                    Task {
+                        await viewModel.saveChanges()
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(!viewModel.hasChanges)
+            }
+            .padding(.horizontal)
+            .frame(minWidth: 320, idealWidth: 380)
+        }
+        .padding(.vertical, 10)
+        .background(.bar)
     }
 
     private var selectionHeader: some View {
@@ -170,29 +198,6 @@ struct MainView: View {
                         .font(.caption)
                         .foregroundStyle(.orange)
                 }
-            }
-        }
-    }
-
-    private var actionButtons: some View {
-        VStack(spacing: 12) {
-            Toggle(String(localized: "Sync file dates with EXIF"), isOn: $viewModel.syncFileDates)
-
-            HStack {
-                Button(String(localized: "Reset Changes")) {
-                    viewModel.resetSelectedChanges()
-                }
-                .disabled(!viewModel.hasChanges)
-
-                Spacer()
-
-                Button(String(localized: "Apply Changes")) {
-                    Task {
-                        await viewModel.saveChanges()
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(!viewModel.hasChanges)
             }
         }
     }
