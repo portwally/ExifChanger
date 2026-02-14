@@ -10,20 +10,14 @@ struct MainView: View {
         VStack(spacing: 0) {
             HSplitView {
                 // Left side: Photos
-                photoContent
+                photoPanel
                     .frame(minWidth: 300)
 
                 // Right side: Editors
                 if viewModel.hasPhotos {
-                    editorContent
+                    editorPanel
                         .frame(minWidth: 320, idealWidth: 380)
                 }
-            }
-
-            // Full-width bottom bar
-            if viewModel.hasPhotos {
-                Divider()
-                bottomBar
             }
         }
         .frame(minWidth: 700, minHeight: 500)
@@ -58,23 +52,31 @@ struct MainView: View {
         }
     }
 
-    // MARK: - Photo Content
+    // MARK: - Photo Panel
 
-    private var photoContent: some View {
-        Group {
-            if viewModel.hasPhotos {
-                PhotoGridView(viewModel: viewModel) { photo in
-                    inspectedPhoto = photo
-                }
-            } else {
-                PhotoDropZone { urls in
-                    viewModel.addPhotos(from: urls)
-                } onChooseFiles: {
-                    Task {
-                        let urls = await viewModel.showOpenPanel()
+    private var photoPanel: some View {
+        VStack(spacing: 0) {
+            Group {
+                if viewModel.hasPhotos {
+                    PhotoGridView(viewModel: viewModel) { photo in
+                        inspectedPhoto = photo
+                    }
+                } else {
+                    PhotoDropZone { urls in
                         viewModel.addPhotos(from: urls)
+                    } onChooseFiles: {
+                        Task {
+                            let urls = await viewModel.showOpenPanel()
+                            viewModel.addPhotos(from: urls)
+                        }
                     }
                 }
+            }
+
+            // Bottom toolbar
+            if viewModel.hasPhotos {
+                Divider()
+                photoToolbar
             }
         }
         .onDrop(of: [.fileURL], isTargeted: nil) { providers in
@@ -83,102 +85,102 @@ struct MainView: View {
         }
     }
 
-    // MARK: - Editor Content
-
-    private var editorContent: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                // Selection info
-                selectionHeader
-
-                if viewModel.hasSelection {
-                    // Date/Time Editor
-                    DateTimeEditorView(viewModel: viewModel)
-
-                    Divider()
-
-                    // Keywords Editor
-                    KeywordSelectorView(viewModel: viewModel)
-
-                    Divider()
-
-                    // Location Editor
-                    LocationPickerView(viewModel: viewModel)
-                } else {
-                    Text("Select photos to edit")
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.top, 40)
-                }
-
-                Spacer()
+    private var photoToolbar: some View {
+        HStack {
+            Button(String(localized: "Select All")) {
+                viewModel.selectAll()
             }
-            .padding()
+            .disabled(viewModel.photos.isEmpty)
+
+            Button(String(localized: "Deselect")) {
+                viewModel.deselectAll()
+            }
+            .disabled(!viewModel.hasSelection)
+
+            Spacer()
+
+            Text("\(viewModel.selectedPhotoIDs.count) / \(viewModel.photos.count)")
+                .foregroundStyle(.secondary)
+                .font(.caption)
+
+            Spacer()
+
+            Button(String(localized: "Remove")) {
+                viewModel.removeSelectedPhotos()
+            }
+            .disabled(!viewModel.hasSelection)
+
+            Button(String(localized: "Clear All")) {
+                viewModel.clearAllPhotos()
+            }
+            .disabled(viewModel.photos.isEmpty)
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 10)
+        .background(.bar)
+    }
+
+    // MARK: - Editor Panel
+
+    private var editorPanel: some View {
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    // Selection info
+                    selectionHeader
+
+                    if viewModel.hasSelection {
+                        // Date/Time Editor
+                        DateTimeEditorView(viewModel: viewModel)
+
+                        Divider()
+
+                        // Keywords Editor
+                        KeywordSelectorView(viewModel: viewModel)
+
+                        Divider()
+
+                        // Location Editor
+                        LocationPickerView(viewModel: viewModel)
+                    } else {
+                        Text("Select photos to edit")
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.top, 40)
+                    }
+
+                    Spacer()
+                }
+                .padding()
+            }
+
+            // Bottom action bar
+            Divider()
+            actionToolbar
         }
         .background(Color(.windowBackgroundColor))
     }
 
-    // MARK: - Bottom Bar
+    private var actionToolbar: some View {
+        HStack {
+            Toggle(String(localized: "Sync file dates with EXIF"), isOn: $viewModel.syncFileDates)
 
-    private var bottomBar: some View {
-        HStack(spacing: 0) {
-            // Left side: photo selection controls
-            HStack {
-                Button(String(localized: "Select All")) {
-                    viewModel.selectAll()
-                }
-                .disabled(viewModel.photos.isEmpty)
+            Spacer()
 
-                Button(String(localized: "Deselect")) {
-                    viewModel.deselectAll()
-                }
-                .disabled(!viewModel.hasSelection)
-
-                Spacer()
-
-                Text("\(viewModel.selectedPhotoIDs.count) / \(viewModel.photos.count)")
-                    .foregroundStyle(.secondary)
-                    .font(.caption)
-
-                Spacer()
-
-                Button(String(localized: "Remove")) {
-                    viewModel.removeSelectedPhotos()
-                }
-                .disabled(!viewModel.hasSelection)
-
-                Button(String(localized: "Clear All")) {
-                    viewModel.clearAllPhotos()
-                }
-                .disabled(viewModel.photos.isEmpty)
+            Button(String(localized: "Reset Changes")) {
+                viewModel.resetSelectedChanges()
             }
-            .padding(.horizontal)
-            .frame(minWidth: 300)
+            .disabled(!viewModel.hasChanges)
 
-            Divider()
-
-            // Right side: action controls
-            HStack {
-                Toggle(String(localized: "Sync file dates with EXIF"), isOn: $viewModel.syncFileDates)
-
-                Spacer()
-
-                Button(String(localized: "Reset Changes")) {
-                    viewModel.resetSelectedChanges()
+            Button(String(localized: "Apply Changes")) {
+                Task {
+                    await viewModel.saveChanges()
                 }
-                .disabled(!viewModel.hasChanges)
-
-                Button(String(localized: "Apply Changes")) {
-                    Task {
-                        await viewModel.saveChanges()
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(!viewModel.hasChanges)
             }
-            .padding(.horizontal)
-            .frame(minWidth: 320, idealWidth: 380)
+            .buttonStyle(.borderedProminent)
+            .disabled(!viewModel.hasChanges)
         }
+        .padding(.horizontal)
         .padding(.vertical, 10)
         .background(.bar)
     }
