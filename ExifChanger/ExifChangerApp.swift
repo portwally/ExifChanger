@@ -11,7 +11,22 @@ import SwiftUI
 struct ExifChangerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+        }
+        .windowStyle(.automatic)
+        .windowResizability(.contentMinSize)
+        .defaultSize(width: 950, height: 650)
+        .commands {
+            CommandGroup(replacing: .newItem) {
+                Button(String(localized: "Open Photos...")) {
+                    NotificationCenter.default.post(name: .openPhotos, object: nil)
+                }
+                .keyboardShortcut("o", modifiers: .command)
+            }
         }
     }
+}
+
+extension Notification.Name {
+    static let openPhotos = Notification.Name("openPhotos")
 }
