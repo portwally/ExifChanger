@@ -4,10 +4,16 @@
     "" : {
 
     },
-    "  %@:" : {
+    "-- Raw Exif IFD --" : {
 
     },
-    "%@" : {
+    "-- Raw GPS IFD --" : {
+
+    },
+    "-- Raw IPTC data --" : {
+
+    },
+    "-- Raw TIFF IFD --" : {
 
     },
     "%lld / %lld" : {
@@ -87,6 +93,7 @@
       }
     },
     "Altitude" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -109,6 +116,7 @@
       }
     },
     "Aperture" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -175,6 +183,7 @@
       }
     },
     "Artist" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -219,6 +228,9 @@
         }
       }
     },
+    "Basic Exif data:" : {
+
+    },
     "Birthday" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -243,6 +255,7 @@
       }
     },
     "Camera" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -486,6 +499,7 @@
       }
     },
     "Copyright" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -597,6 +611,7 @@
       }
     },
     "Date Digitized" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -619,6 +634,7 @@
       }
     },
     "Date Modified" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -641,6 +657,7 @@
       }
     },
     "Date Taken" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -685,6 +702,7 @@
       }
     },
     "Dimensions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -774,6 +792,7 @@
       }
     },
     "Exposure" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -864,6 +883,7 @@
       }
     },
     "Flash" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -886,6 +906,7 @@
       }
     },
     "Focal Length" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -908,6 +929,7 @@
       }
     },
     "Format" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -928,6 +950,9 @@
           }
         }
       }
+    },
+    "GPS data:" : {
+
     },
     "Graduation" : {
       "extractionState" : "stale",
@@ -975,6 +1000,7 @@
       }
     },
     "Image" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1039,6 +1065,9 @@
           }
         }
       }
+    },
+    "IPTC metadata:" : {
+
     },
     "ISO" : {
       "extractionState" : "stale",
@@ -1112,6 +1141,7 @@
       }
     },
     "Latitude" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1134,6 +1164,7 @@
       }
     },
     "Lens" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1200,6 +1231,7 @@
       }
     },
     "Longitude" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1222,6 +1254,7 @@
       }
     },
     "Make" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1244,6 +1277,7 @@
       }
     },
     "Model" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1288,6 +1322,7 @@
       }
     },
     "No" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1309,7 +1344,23 @@
         }
       }
     },
+    "No EXIF data available" : {
+
+    },
+    "No GPS data available" : {
+
+    },
+    "No image data available" : {
+
+    },
+    "No IPTC data available" : {
+
+    },
+    "No IPTC keywords" : {
+
+    },
     "No metadata available" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1352,6 +1403,9 @@
           }
         }
       }
+    },
+    "No TIFF data available" : {
+
     },
     "Now" : {
       "localizations" : {
@@ -1464,6 +1518,7 @@
       }
     },
     "Orientation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1506,6 +1561,9 @@
           }
         }
       }
+    },
+    "Photo Location" : {
+
     },
     "Portrait" : {
       "extractionState" : "stale",
@@ -1554,6 +1612,7 @@
       }
     },
     "Raw Keys" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1576,6 +1635,7 @@
       }
     },
     "Raw Metadata" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1818,6 +1878,7 @@
       }
     },
     "Shutter Speed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1840,6 +1901,7 @@
       }
     },
     "Software" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1882,6 +1944,9 @@
           }
         }
       }
+    },
+    "TIFF metadata:" : {
+
     },
     "Use my location" : {
       "localizations" : {
@@ -1951,6 +2016,7 @@
       }
     },
     "Yes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

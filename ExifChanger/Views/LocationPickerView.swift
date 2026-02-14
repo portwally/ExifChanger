@@ -93,8 +93,17 @@ struct LocationPickerView: View {
             ZStack(alignment: .topTrailing) {
                 MapReader { proxy in
                     Map(position: $cameraPosition, interactionModes: [.pan, .zoom]) {
+                        // Show markers for all selected photos with GPS data
+                        ForEach(photosWithLocations, id: \.id) { photo in
+                            if let coord = photo.originalMetadata?.coordinate {
+                                Marker(photo.filename, coordinate: coord)
+                                    .tint(.blue)
+                            }
+                        }
+
+                        // Show editing coordinate (new location to apply) in red
                         if let coordinate = viewModel.editingCoordinate {
-                            Marker(String(localized: "Selected Location"), coordinate: coordinate)
+                            Marker(String(localized: "New Location"), coordinate: coordinate)
                                 .tint(.red)
                         }
                     }
@@ -170,6 +179,46 @@ struct LocationPickerView: View {
             if let location = newLocation {
                 viewModel.editingCoordinate = location.coordinate
                 updateCamera(for: location.coordinate)
+            }
+        }
+        .onChange(of: viewModel.selectedPhotoIDs) {
+            fitMapToSelectedPhotos()
+        }
+        .onAppear {
+            fitMapToSelectedPhotos()
+        }
+    }
+
+    // Photos with GPS locations among selected
+    private var photosWithLocations: [PhotoItem] {
+        viewModel.selectedPhotos.filter { $0.originalMetadata?.coordinate != nil }
+    }
+
+    private func fitMapToSelectedPhotos() {
+        let coordinates = photosWithLocations.compactMap { $0.originalMetadata?.coordinate }
+        guard !coordinates.isEmpty else { return }
+
+        if coordinates.count == 1 {
+            // Single photo - zoom to its location
+            updateCamera(for: coordinates[0])
+        } else {
+            // Multiple photos - fit all markers
+            let minLat = coordinates.map { $0.latitude }.min()!
+            let maxLat = coordinates.map { $0.latitude }.max()!
+            let minLon = coordinates.map { $0.longitude }.min()!
+            let maxLon = coordinates.map { $0.longitude }.max()!
+
+            let center = CLLocationCoordinate2D(
+                latitude: (minLat + maxLat) / 2,
+                longitude: (minLon + maxLon) / 2
+            )
+            let span = MKCoordinateSpan(
+                latitudeDelta: max((maxLat - minLat) * 1.3, 0.01),
+                longitudeDelta: max((maxLon - minLon) * 1.3, 0.01)
+            )
+
+            withAnimation {
+                cameraPosition = .region(MKCoordinateRegion(center: center, span: span))
             }
         }
     }
