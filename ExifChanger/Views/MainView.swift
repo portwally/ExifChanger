@@ -17,11 +17,11 @@ struct MainView: View {
                 // Right side: Editors
                 if viewModel.hasPhotos {
                     editorPanel
-                        .frame(minWidth: 320, idealWidth: 380)
+                        .frame(minWidth: 380, idealWidth: 420)
                 }
             }
         }
-        .frame(minWidth: 700, minHeight: 500)
+        .frame(minWidth: 760, minHeight: 500)
         .sheet(item: $inspectedPhoto) { photo in
             MetadataInspectorView(photo: photo)
         }
@@ -114,7 +114,7 @@ struct MainView: View {
             }
             .disabled(!viewModel.hasSelection)
 
-            Button(String(localized: "Clear All")) {
+            Button(String(localized: "Remove All")) {
                 viewModel.clearAllPhotos()
             }
             .disabled(viewModel.photos.isEmpty)

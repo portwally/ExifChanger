@@ -126,13 +126,10 @@ final class ExifService: Sendable {
         }
 
         // Update IPTC dictionary for keywords
+        // Note: Must explicitly set keywords array (even if empty) - removing the key doesn't work
+        // because CGImageDestination preserves original metadata when key is absent
         var iptcDict = (existingProperties[kCGImagePropertyIPTCDictionary as String] as? [String: Any]) ?? [:]
-
-        if !metadata.keywords.isEmpty {
-            iptcDict[kCGImagePropertyIPTCKeywords as String] = metadata.keywords
-        } else {
-            iptcDict.removeValue(forKey: kCGImagePropertyIPTCKeywords as String)
-        }
+        iptcDict[kCGImagePropertyIPTCKeywords as String] = metadata.keywords
 
         updatedProperties[kCGImagePropertyIPTCDictionary as String] = iptcDict
 

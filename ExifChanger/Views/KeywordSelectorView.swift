@@ -10,8 +10,65 @@ struct KeywordSelectorView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label(String(localized: "Keywords"), systemImage: "tag")
-                .font(.headline)
+            // Header with Auto-Tag button
+            HStack {
+                Label(String(localized: "Keywords"), systemImage: "tag")
+                    .font(.headline)
+
+                Spacer()
+
+                Button {
+                    Task {
+                        await viewModel.analyzeSelectedPhotosForKeywords()
+                    }
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "sparkles")
+                        Text(String(localized: "Auto-Tag"))
+                    }
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .disabled(!viewModel.hasSelection || viewModel.isAnalyzingImages)
+            }
+
+            // Analysis progress
+            if viewModel.isAnalyzingImages {
+                VStack(spacing: 6) {
+                    ProgressView(value: viewModel.analysisProgress)
+                    Text(String(localized: "Analyzing images..."))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
+            // Analysis result message
+            if let result = viewModel.analysisResult {
+                HStack {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundStyle(.green)
+                    Text(result)
+                        .font(.caption)
+                    Spacer()
+                    Button {
+                        viewModel.clearAnalysisResult()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundStyle(.secondary)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(8)
+                .background(Color.green.opacity(0.1))
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+            }
+
+            // Analysis error
+            if let error = viewModel.analysisError {
+                Text(error)
+                    .font(.caption)
+                    .foregroundStyle(.red)
+            }
 
             // Show existing keywords from first selected photo
             if let firstPhoto = viewModel.selectedPhotos.first,
@@ -83,31 +140,44 @@ struct KeywordSelectorView: View {
             }
 
             // Actions
-            HStack {
-                Button(String(localized: "Clear")) {
-                    viewModel.editingKeywords.removeAll()
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.small)
-                .disabled(viewModel.editingKeywords.isEmpty)
-
-                Button(String(localized: "Load from Photo")) {
-                    if let firstPhoto = viewModel.selectedPhotos.first,
-                       let keywords = firstPhoto.originalMetadata?.keywords {
-                        viewModel.editingKeywords = Set(keywords)
+            VStack(spacing: 8) {
+                HStack {
+                    Button(String(localized: "Clear")) {
+                        viewModel.editingKeywords.removeAll()
                     }
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.small)
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .disabled(viewModel.editingKeywords.isEmpty)
 
-                Spacer()
+                    Button(String(localized: "Load from Photo")) {
+                        if let firstPhoto = viewModel.selectedPhotos.first,
+                           let keywords = firstPhoto.originalMetadata?.keywords {
+                            viewModel.editingKeywords = Set(keywords)
+                        }
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
 
-                Button(String(localized: "Apply to Selected")) {
-                    viewModel.applyKeywordsToSelected()
+                    Spacer()
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.small)
-                .disabled(!viewModel.hasSelection)
+
+                HStack {
+                    Button(String(localized: "Remove All Keywords")) {
+                        viewModel.removeAllKeywordsFromSelected()
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .disabled(!viewModel.hasSelection)
+
+                    Spacer()
+
+                    Button(String(localized: "Apply to Selected")) {
+                        viewModel.applyKeywordsToSelected()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.small)
+                    .disabled(!viewModel.hasSelection)
+                }
             }
         }
         .padding()

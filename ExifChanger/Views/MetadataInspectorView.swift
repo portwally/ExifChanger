@@ -80,7 +80,7 @@ struct MetadataInspectorView: View {
             }
             .padding()
         }
-        .frame(width: 550, height: 450)
+        .frame(width: 600, height: 450)
     }
 }
 
@@ -389,7 +389,7 @@ struct InfoRow: View {
         HStack(alignment: .top) {
             Text(label)
                 .foregroundStyle(.secondary)
-                .frame(width: 140, alignment: .trailing)
+                .frame(width: 200, alignment: .trailing)
             Text(value)
                 .textSelection(.enabled)
             Spacer()

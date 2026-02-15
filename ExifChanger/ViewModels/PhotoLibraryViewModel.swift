@@ -20,6 +20,12 @@ final class PhotoLibraryViewModel {
     var editingKeywords: Set<String> = []
     var syncFileDates: Bool = true
 
+    // Vision AI analysis state
+    var isAnalyzingImages: Bool = false
+    var analysisProgress: Double = 0
+    var analysisError: String?
+    var analysisResult: String?
+
     // Manual refresh trigger for hasChanges
     private var changeCounter: Int = 0
 
@@ -161,11 +167,77 @@ final class PhotoLibraryViewModel {
         notifyChanges()
     }
 
+    func removeAllKeywordsFromSelected() {
+        for photo in selectedPhotos {
+            var metadata = photo.pendingMetadata ?? ExifMetadata()
+            metadata.keywords = []
+            photo.pendingMetadata = metadata
+        }
+        notifyChanges()
+    }
+
     func resetSelectedChanges() {
         for photo in selectedPhotos {
             photo.resetChanges()
         }
         notifyChanges()
+    }
+
+    // MARK: - Vision AI Analysis
+
+    func analyzeSelectedPhotosForKeywords() async {
+        guard hasSelection else { return }
+
+        isAnalyzingImages = true
+        analysisProgress = 0
+        analysisError = nil
+        analysisResult = nil
+
+        let photosToAnalyze = selectedPhotos
+        let total = Double(photosToAnalyze.count)
+        var totalKeywordsAdded = 0
+
+        for (index, photo) in photosToAnalyze.enumerated() {
+            do {
+                let suggestions = try await VisionService.shared.classifyImage(at: photo.url)
+
+                if !suggestions.isEmpty {
+                    // Get existing keywords from pending metadata
+                    var metadata = photo.pendingMetadata ?? ExifMetadata()
+                    var keywords = Set(metadata.keywords)
+
+                    // Add new AI-detected keywords
+                    for suggestion in suggestions {
+                        keywords.insert(suggestion.keyword)
+                    }
+
+                    metadata.keywords = Array(keywords).sorted()
+                    photo.pendingMetadata = metadata
+                    totalKeywordsAdded += suggestions.count
+                }
+            } catch {
+                // Skip this photo on error, continue with others
+            }
+
+            analysisProgress = Double(index + 1) / total
+        }
+
+        notifyChanges()
+        isAnalyzingImages = false
+        analysisProgress = 0
+
+        if totalKeywordsAdded > 0 {
+            // Keywords are already applied per-photo to pendingMetadata
+            // User should click "Apply Changes" to save (not "Apply to Selected")
+            analysisResult = String(localized: "Added \(totalKeywordsAdded) keywords. Click 'Apply Changes' to save.")
+        } else {
+            analysisResult = String(localized: "No keywords detected")
+        }
+    }
+
+    func clearAnalysisResult() {
+        analysisResult = nil
+        analysisError = nil
     }
 
     // MARK: - Save Changes
@@ -200,8 +272,12 @@ final class PhotoLibraryViewModel {
                     )
                 }
 
-                // Update original metadata to reflect saved changes
-                photo.originalMetadata = metadata
+                // Re-read metadata from file to get updated allProperties for inspector
+                let freshMetadata = try await Task.detached(priority: .userInitiated) {
+                    try await ExifService.shared.readMetadata(from: photo.url)
+                }.value
+                photo.originalMetadata = freshMetadata
+                photo.pendingMetadata = freshMetadata
 
             } catch let error as ExifError where error == .noWritePermission {
                 needsWriteAccess = true

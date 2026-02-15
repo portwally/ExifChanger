@@ -70,6 +70,29 @@
         }
       }
     },
+    "Accept All" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle akzeptieren"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceitar Todos"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceitar Todos"
+          }
+        }
+      }
+    },
     "Add" : {
       "localizations" : {
         "de" : {
@@ -136,6 +159,74 @@
         }
       }
     },
+    "Added %lld keywords to %lld photo(s)" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Schlüsselwörter zu %lld Foto(s) hinzugefügt"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld palavras-chave adicionadas a %lld foto(s)"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld palavras-chave adicionadas a %lld foto(s)"
+          }
+        }
+      }
+    },
+    "Added %lld keywords. Click 'Apply Changes' to save." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Stichwörter hinzugefügt. Klicken Sie auf 'Änderungen speichern'."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld palavras-chave adicionadas. Clique em 'Aplicar Alterações' para salvar."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld palavras-chave adicionadas. Clique em 'Aplicar Alterações' para guardar."
+          }
+        }
+      }
+    },
+    "AI Suggestions" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KI-Vorschläge"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugestões de IA"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugestões de IA"
+          }
+        }
+      }
+    },
     "Altitude" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -155,6 +246,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Altitude"
+          }
+        }
+      }
+    },
+    "Analyzing images..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilder analysieren..."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analisando imagens..."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A analisar imagens..."
           }
         }
       }
@@ -267,6 +380,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Artista"
+          }
+        }
+      }
+    },
+    "Auto-Tag" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-Tag"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-Tag"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-Tag"
           }
         }
       }
@@ -409,6 +544,28 @@
         }
       }
     },
+    "Cannot load image for analysis" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bild kann nicht für Analyse geladen werden"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível carregar a imagem para análise"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível carregar a imagem para análise"
+          }
+        }
+      }
+    },
     "Cannot open the image file" : {
       "localizations" : {
         "de" : {
@@ -542,6 +699,7 @@
       }
     },
     "Clear All" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1496,6 +1654,28 @@
         }
       }
     },
+    "Image classification failed: %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildklassifizierung fehlgeschlagen: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falha na classificação da imagem: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falha na classificação da imagem: %@"
+          }
+        }
+      }
+    },
     "Image format not supported" : {
       "localizations" : {
         "de" : {
@@ -1946,6 +2126,28 @@
     "No IPTC keywords" : {
 
     },
+    "No keywords detected" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Schlüsselwörter erkannt"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma palavra-chave detectada"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma palavra-chave detetada"
+          }
+        }
+      }
+    },
     "No metadata available" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2328,6 +2530,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remover"
+          }
+        }
+      }
+    },
+    "Remove All" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle entfernen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover Todos"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover Todos"
+          }
+        }
+      }
+    },
+    "Remove All Keywords" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Stichwörter entfernen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover Todas as Palavras-chave"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover Todas as Palavras-chave"
           }
         }
       }
