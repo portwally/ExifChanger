@@ -1,4 +1,4 @@
-# ExifChanger
+# ExifEasy
 
 A native macOS app for batch editing photo metadata (EXIF, IPTC, GPS). Built with SwiftUI for photographers who need to quickly update dates, locations, and keywords on multiple photos.
 
@@ -23,18 +23,18 @@ A native macOS app for batch editing photo metadata (EXIF, IPTC, GPS). Built wit
 
 ### Location Editor
 - Interactive Apple Maps view
-- Tap-to-select coordinates on map
+- Click on map to set coordinates
 - Location search with autocomplete
 - "Use my location" for device GPS
 - View multiple photo locations on map (blue markers)
 - Set new location (red marker)
 
 ### Keywords Editor
-- Predefined photography keywords:
-  - Concert, Wedding, Portrait, Event, Landscape
-  - Family, Corporate, Fashion, Product
-  - Birthday, Baptism, Graduation
-- Custom keyword input
+- 18 predefined photography keywords:
+  - **Events**: Concert, Wedding, Event, Exhibition, Workshop, Birthday, Baptism
+  - **People**: Portrait, Selfportrait, Family, Corporate, Fashion
+  - **Other**: Landscape, Travel, Product, Dance, Theater, Cyanotype
+- Custom keyword input for additional tags
 - Keywords stored in IPTC metadata (compatible with Lightroom, Capture One, etc.)
 
 ### Localization
@@ -78,7 +78,7 @@ A native macOS app for batch editing photo metadata (EXIF, IPTC, GPS). Built wit
 3. **Edit Metadata**:
    - Set new date/time and click "Apply to Selected"
    - Click keywords to add them, then "Apply to Selected"
-   - Tap the map or search for a location, then "Apply to Selected"
+   - Click on the map or search for a location, then "Apply to Selected"
 4. **Save**: Click "Apply Changes" to write all pending changes to files
 
 ### Tips
@@ -98,7 +98,7 @@ A native macOS app for batch editing photo metadata (EXIF, IPTC, GPS). Built wit
 ## Project Structure
 
 ```
-ExifChanger/
+ExifEasy/
 ├── Models/
 │   ├── PhotoItem.swift          # Photo with URL, thumbnail, metadata
 │   └── ExifMetadata.swift       # EXIF data structure

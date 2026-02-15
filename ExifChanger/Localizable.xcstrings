@@ -585,6 +585,28 @@
         }
       }
     },
+    "Click on map to set location" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Karte klicken, um Standort zu setzen"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique no mapa para definir localização"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique no mapa para definir localização"
+          }
+        }
+      }
+    },
     "Click on photos to select them. Use Select All to select everything." : {
       "localizations" : {
         "de" : {
@@ -625,6 +647,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clique em palavras-chave predefinidas ou escreva as suas próprias. As palavras-chave são armazenadas nos metadados IPTC."
+          }
+        }
+      }
+    },
+    "Click on the map, search for a place, or use 'My Location' to set GPS coordinates." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicken Sie auf die Karte, suchen Sie einen Ort oder verwenden Sie 'Mein Standort', um GPS-Koordinaten festzulegen."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique no mapa, pesquise um local ou use 'Minha Localização' para definir coordenadas GPS."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique no mapa, pesquise um local ou use 'A Minha Localização' para definir coordenadas GPS."
           }
         }
       }
@@ -804,6 +848,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palavra-chave personalizada..."
+          }
+        }
+      }
+    },
+    "Cyanotype" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyanotypie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cianotipia"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cianotipia"
+          }
+        }
+      }
+    },
+    "Dance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanz"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dança"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dança"
           }
         }
       }
@@ -1055,32 +1145,55 @@
         }
       }
     },
-    "ExifChanger" : {
-
-    },
-    "ExifChanger Help" : {
+    "Exhibition" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ExifChanger Hilfe"
+            "value" : "Ausstellung"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajuda do ExifChanger"
+            "value" : "Exposição"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajuda do ExifChanger"
+            "value" : "Exposição"
           }
         }
       }
     },
-    "ExifChanger v1.0" : {
+    "ExifEasy" : {
+
+    },
+    "ExifEasy Help" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ExifEasy Hilfe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda do ExifEasy"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajuda do ExifEasy"
+          }
+        }
+      }
+    },
+    "ExifEasy v1.0" : {
 
     },
     "Exposure" : {
@@ -2528,6 +2641,29 @@
         }
       }
     },
+    "Selfportrait" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selbstporträt"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorretrato"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorretrato"
+          }
+        }
+      }
+    },
     "Set Location" : {
       "localizations" : {
         "de" : {
@@ -2684,28 +2820,6 @@
         }
       }
     },
-    "Tap on the map, search for a place, or use 'My Location' to set GPS coordinates." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tippen Sie auf die Karte, suchen Sie einen Ort oder verwenden Sie 'Mein Standort', um GPS-Koordinaten festzulegen."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque no mapa, pesquise um local ou use 'Minha Localização' para definir coordenadas GPS."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toque no mapa, pesquise um local ou use 'A Minha Localização' para definir coordenadas GPS."
-          }
-        }
-      }
-    },
     "The red marker shows the new location. Click 'Apply to Selected' to save it." : {
       "localizations" : {
         "de" : {
@@ -2724,6 +2838,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "O marcador vermelho mostra a nova localização. Clique em 'Aplicar aos Selecionados' para guardá-la."
+          }
+        }
+      }
+    },
+    "Theater" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theater"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teatro"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teatro"
           }
         }
       }
@@ -2749,6 +2886,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dicas"
+          }
+        }
+      }
+    },
+    "Travel" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reise"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viagem"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viagem"
           }
         }
       }
@@ -2860,6 +3020,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quando ativado, as datas de criação e modificação do ficheiro corresponderão à data EXIF."
+          }
+        }
+      }
+    },
+    "Workshop" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workshop"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oficina"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Workshop"
           }
         }
       }

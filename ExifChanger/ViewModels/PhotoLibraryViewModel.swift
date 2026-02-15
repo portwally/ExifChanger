@@ -99,7 +99,7 @@ final class PhotoLibraryViewModel {
 
             // Generate thumbnail
             let thumbnail = await Task.detached(priority: .userInitiated) {
-                return ExifService.shared.generateThumbnail(for: photo.url)
+                await ExifService.shared.generateThumbnail(for: photo.url)
             }.value
             if let thumbnail = thumbnail {
                 photo.thumbnail = thumbnail
@@ -108,7 +108,7 @@ final class PhotoLibraryViewModel {
             // Read metadata
             do {
                 let metadata = try await Task.detached(priority: .userInitiated) {
-                    try ExifService.shared.readMetadata(from: photo.url)
+                    try await ExifService.shared.readMetadata(from: photo.url)
                 }.value
                 photo.originalMetadata = metadata
                 photo.pendingMetadata = metadata
@@ -188,7 +188,7 @@ final class PhotoLibraryViewModel {
             do {
                 // Write EXIF changes
                 try await Task.detached(priority: .userInitiated) {
-                    try ExifService.shared.writeMetadata(to: photo.url, metadata: metadata)
+                    try await ExifService.shared.writeMetadata(to: photo.url, metadata: metadata)
                 }.value
 
                 // Sync file dates if enabled
@@ -268,15 +268,21 @@ enum PhotoKeyword: String, CaseIterable, Identifiable {
     case concert = "Concert"
     case wedding = "Wedding"
     case portrait = "Portrait"
+    case selfportrait = "Selfportrait"
     case event = "Event"
+    case exhibition = "Exhibition"
+    case workshop = "Workshop"
     case landscape = "Landscape"
+    case travel = "Travel"
     case family = "Family"
     case corporate = "Corporate"
     case fashion = "Fashion"
     case product = "Product"
     case birthday = "Birthday"
     case baptism = "Baptism"
-    case graduation = "Graduation"
+    case dance = "Dance"
+    case theater = "Theater"
+    case cyanotype = "Cyanotype"
 
     var id: String { rawValue }
 

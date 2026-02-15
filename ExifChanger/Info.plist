@@ -2,9 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleName</key>
+	<string>ExifEasy</string>
+	<key>CFBundleDisplayName</key>
+	<string>ExifEasy</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>ExifChanger needs your location to add GPS coordinates to your photos.</string>
+	<string>ExifEasy needs your location to add GPS coordinates to your photos.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>ExifChanger needs your location to add GPS coordinates to your photos.</string>
+	<string>ExifEasy needs your location to add GPS coordinates to your photos.</string>
 </dict>
 </plist>

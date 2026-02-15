@@ -25,7 +25,7 @@ struct ExifChangerApp: App {
             }
 
             CommandGroup(replacing: .help) {
-                Button(String(localized: "ExifChanger Help")) {
+                Button(String(localized: "ExifEasy Help")) {
                     NotificationCenter.default.post(name: .showHelp, object: nil)
                 }
                 .keyboardShortcut("?", modifiers: .command)

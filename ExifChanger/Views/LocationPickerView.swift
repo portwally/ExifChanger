@@ -1,16 +1,16 @@
 import SwiftUI
 import MapKit
 import CoreLocation
-internal import Combine
+import Combine
 
 struct LocationPickerView: View {
     @Bindable var viewModel: PhotoLibraryViewModel
     @State private var searchText = ""
     @State private var searchResults: [MKMapItem] = []
-    @State private var cameraPosition: MapCameraPosition = .region(MKCoordinateRegion(
+    @State private var mapRegion = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 40.0, longitude: -3.0),
         span: MKCoordinateSpan(latitudeDelta: 50, longitudeDelta: 50)
-    ))
+    )
     @State private var isSearching = false
     @StateObject private var locationManager = LocationManager()
 
@@ -89,33 +89,27 @@ struct LocationPickerView: View {
                 .frame(maxHeight: 120)
             }
 
-            // Map view with tap-to-select
-            ZStack(alignment: .topTrailing) {
-                MapReader { proxy in
-                    Map(position: $cameraPosition, interactionModes: [.pan, .zoom]) {
-                        // Show markers for all selected photos with GPS data
-                        ForEach(photosWithLocations, id: \.id) { photo in
-                            if let coord = photo.originalMetadata?.coordinate {
-                                Marker(photo.filename, coordinate: coord)
-                                    .tint(.blue)
-                            }
-                        }
+            // Map view - click to set location
+            Text(String(localized: "Click on map to set location"))
+                .font(.caption2)
+                .foregroundStyle(.secondary)
 
-                        // Show editing coordinate (new location to apply) in red
-                        if let coordinate = viewModel.editingCoordinate {
-                            Marker(String(localized: "New Location"), coordinate: coordinate)
-                                .tint(.red)
+            ZStack(alignment: .topTrailing) {
+                ClickableMapView(
+                    region: mapRegion,
+                    photoLocations: photosWithLocations.compactMap { $0.originalMetadata?.coordinate },
+                    editingCoordinate: viewModel.editingCoordinate,
+                    onTap: { coordinate in
+                        viewModel.editingCoordinate = coordinate
+                        searchText = ""
+                        searchResults = []
+                    },
+                    onRegionChange: { newRegion in
+                        DispatchQueue.main.async {
+                            mapRegion = newRegion
                         }
                     }
-                    .mapStyle(.standard)
-                    .onTapGesture { location in
-                        if let coordinate = proxy.convert(location, from: .local) {
-                            viewModel.editingCoordinate = coordinate
-                            searchText = ""
-                            searchResults = []
-                        }
-                    }
-                }
+                )
                 .frame(height: 180)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
 
@@ -217,9 +211,7 @@ struct LocationPickerView: View {
                 longitudeDelta: max((maxLon - minLon) * 1.3, 0.01)
             )
 
-            withAnimation {
-                cameraPosition = .region(MKCoordinateRegion(center: center, span: span))
-            }
+            mapRegion = MKCoordinateRegion(center: center, span: span)
         }
     }
 
@@ -252,12 +244,10 @@ struct LocationPickerView: View {
     }
 
     private func updateCamera(for coordinate: CLLocationCoordinate2D) {
-        withAnimation {
-            cameraPosition = .region(MKCoordinateRegion(
-                center: coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            ))
-        }
+        mapRegion = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        )
     }
 
     private func formatCoordinate(_ coord: CLLocationCoordinate2D) -> String {
@@ -329,6 +319,106 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
 }
+
+// MARK: - Clickable Map View (NSViewRepresentable)
+
+struct ClickableMapView: NSViewRepresentable {
+    var region: MKCoordinateRegion
+    var photoLocations: [CLLocationCoordinate2D]
+    var editingCoordinate: CLLocationCoordinate2D?
+    var onTap: (CLLocationCoordinate2D) -> Void
+    var onRegionChange: (MKCoordinateRegion) -> Void
+
+    func makeNSView(context: Context) -> MKMapView {
+        let mapView = MKMapView()
+        mapView.delegate = context.coordinator
+        mapView.setRegion(region, animated: false)
+
+        // Add click gesture recognizer
+        let clickGesture = NSClickGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleClick(_:)))
+        clickGesture.numberOfClicksRequired = 1
+        mapView.addGestureRecognizer(clickGesture)
+
+        return mapView
+    }
+
+    func updateNSView(_ mapView: MKMapView, context: Context) {
+        // Update region if significantly different
+        let currentCenter = mapView.region.center
+        let newCenter = region.center
+        let distance = abs(currentCenter.latitude - newCenter.latitude) + abs(currentCenter.longitude - newCenter.longitude)
+
+        if distance > 0.0001 {
+            mapView.setRegion(region, animated: true)
+        }
+
+        // Update annotations
+        mapView.removeAnnotations(mapView.annotations)
+
+        // Add photo location annotations (blue)
+        for coord in photoLocations {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coord
+            annotation.title = "Photo"
+            mapView.addAnnotation(annotation)
+        }
+
+        // Add editing coordinate annotation (red)
+        if let editCoord = editingCoordinate {
+            let annotation = EditingAnnotation()
+            annotation.coordinate = editCoord
+            annotation.title = String(localized: "New Location")
+            mapView.addAnnotation(annotation)
+        }
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    class Coordinator: NSObject, MKMapViewDelegate {
+        var parent: ClickableMapView
+
+        init(_ parent: ClickableMapView) {
+            self.parent = parent
+        }
+
+        @objc func handleClick(_ gesture: NSClickGestureRecognizer) {
+            guard let mapView = gesture.view as? MKMapView else { return }
+            let point = gesture.location(in: mapView)
+            let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+            parent.onTap(coordinate)
+        }
+
+        func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+            parent.onRegionChange(mapView.region)
+        }
+
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if annotation is MKUserLocation { return nil }
+
+            let identifier = annotation is EditingAnnotation ? "editing" : "photo"
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView
+
+            if view == nil {
+                view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            } else {
+                view?.annotation = annotation
+            }
+
+            if annotation is EditingAnnotation {
+                view?.markerTintColor = .systemRed
+            } else {
+                view?.markerTintColor = .systemBlue
+            }
+
+            return view
+        }
+    }
+}
+
+// Custom annotation class to distinguish editing marker
+class EditingAnnotation: MKPointAnnotation {}
 
 #Preview {
     let vm = PhotoLibraryViewModel()

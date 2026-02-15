@@ -10,7 +10,7 @@ struct HelpView: View {
                 Image(systemName: "camera.fill")
                     .font(.largeTitle)
                     .foregroundStyle(.orange)
-                Text("ExifChanger")
+                Text("ExifEasy")
                     .font(.title)
                     .fontWeight(.semibold)
                 Spacer()
@@ -81,7 +81,7 @@ struct HelpView: View {
                         )
                         HelpItem(
                             title: String(localized: "Set Location"),
-                            description: String(localized: "Tap on the map, search for a place, or use 'My Location' to set GPS coordinates.")
+                            description: String(localized: "Click on the map, search for a place, or use 'My Location' to set GPS coordinates.")
                         )
                         HelpItem(
                             title: String(localized: "Apply Location"),
@@ -136,7 +136,7 @@ struct HelpView: View {
 
             // Footer
             HStack {
-                Text("ExifChanger v1.0")
+                Text("ExifEasy v1.0")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()

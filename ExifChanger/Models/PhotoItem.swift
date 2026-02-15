@@ -1,6 +1,6 @@
 import Foundation
 import AppKit
-internal import Combine
+import Combine
 import UniformTypeIdentifiers
 
 @MainActor
