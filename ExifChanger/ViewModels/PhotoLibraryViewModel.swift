@@ -240,7 +240,6 @@ final class PhotoLibraryViewModel {
 
             if panel.runModal() == .OK {
                 // Access granted - the URLs now have write permission
-                print("[DEBUG] Write access granted to: \(panel.urls)")
             }
         }
     }

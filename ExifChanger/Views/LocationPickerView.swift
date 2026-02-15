@@ -304,8 +304,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         } else if isAuthorized {
             isRequestingLocation = true
             manager.requestLocation()
-        } else {
-            print("Location access denied. Status: \(status.rawValue)")
         }
     }
 
@@ -316,7 +314,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location error: \(error.localizedDescription)")
         // Error 0 = kCLErrorLocationUnknown, can retry
         if let clError = error as? CLError, clError.code == .locationUnknown {
             // Location temporarily unavailable, will retry automatically
