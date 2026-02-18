@@ -6,9 +6,7 @@
 	<string>ExifEasy</string>
 	<key>CFBundleDisplayName</key>
 	<string>ExifEasy</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>ExifEasy needs your location to add GPS coordinates to your photos.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>ExifEasy needs your location to add GPS coordinates to your photos.</string>
+	<string>ExifEasy uses your current location to add GPS coordinates to photos. For example, when you click "Use My Location", your coordinates will be embedded in the selected photos' EXIF metadata so they appear on the map in the Photos app.</string>
 </dict>
 </plist>
